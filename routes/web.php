@@ -14,14 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', \App\Http\Controllers\MainController::class)->name('/');
 
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/categories', [\App\Http\Controllers\Categories\CategoriesController::class, 'index'])->name('categories');
 
-Route::get('/categories', function () {
-    return view('categories');
-});
+Route::get('/{category}', [\App\Http\Controllers\Categories\CategoriesController::class, 'show'])->name('category');
+
+Route::get('/products/{product}', [\App\Http\Controllers\Product\ProductController::class, 'index'])->name('products');
+
