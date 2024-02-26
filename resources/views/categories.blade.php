@@ -38,8 +38,8 @@
 <div class="container">
     <div class="starter-template">
         <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/mobile.jpg">
+            <a href="/mobiles">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpNeoYOI_MzZIddDAeeSBQXMY0cNn20D5xQ&usqp=CAU">
                 <h2>Мобильные телефоны</h2>
             </a>
             <p>
@@ -47,8 +47,8 @@
             </p>
         </div>
         <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/portable">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/portable.jpg">
+            <a href="/portable">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpNeoYOI_MzZIddDAeeSBQXMY0cNn20D5xQ&usqp=CAU">
                 <h2>Портативная техника</h2>
             </a>
             <p>
@@ -56,8 +56,8 @@
             </p>
         </div>
         <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/appliances">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/appliance.jpg">
+            <a href="/appliances">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvpNeoYOI_MzZIddDAeeSBQXMY0cNn20D5xQ&usqp=CAU">
                 <h2>Бытовая техника</h2>
             </a>
             <p>
