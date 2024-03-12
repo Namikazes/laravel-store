@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Categories;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -11,7 +12,6 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::get();
-
         return view('categories', compact('categories'));
     }
 
