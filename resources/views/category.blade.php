@@ -5,13 +5,15 @@
 @section('content')
     <div class="starter-template">
         <h1>
-           {{ $category->name }}
+           {{ $category->name }} {{ $category->products->count() }}
         </h1>
         <p>
            {{ $category->description }}
         </p>
         <div class="row">
-            @include('cart', ['category' => $category])
+            @foreach($category->products as $product)
+                @include('cart', compact('category'))
+            @endforeach
         </div>
     </div>
 

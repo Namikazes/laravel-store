@@ -5,9 +5,10 @@
 @section('content')
     <div class="starter-template">
         <h1>Все товары</h1>
-
         <div class="row">
-           @include('cart')
+            @foreach($products as $product)
+                @include('cart', compact('product'))
+            @endforeach
         </div>
     </div>
 
