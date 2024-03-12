@@ -5,11 +5,13 @@
             <h3>{{ $product->name }}</h3>
             <p>{{ $product->price }}</p>
             <p>
-                <a href="{{route('bascket')}}" class="btn btn-primary" role="button">В корзину</a>
-
+                <form action="{{route('bascket-add', $product)}}" method="POST">
+                <button type="submit" class="btn btn-primary" role="button">В корзину</button>
                 {{$product->category->name}}
                 <a href="{{route('products', [$product->category->code, $product->code])}}" class="btn btn-default"
                    role="button">Подробнее</a>
+                @csrf
+            </form>
             </p>
         </div>
     </div>
