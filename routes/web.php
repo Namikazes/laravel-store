@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', \App\Http\Controllers\MainController::class)->name('/');
+Route::get('/', \App\Http\Controllers\MainController::class)->name('index');
 
 Route::get('/categories', [\App\Http\Controllers\Categories\CategoriesController::class, 'index'])->name('categories');
 
 Route::get('/{category}', [\App\Http\Controllers\Categories\CategoriesController::class, 'show'])->name('category');
 
-Route::get('/products/{product}', [\App\Http\Controllers\Product\ProductController::class, 'index'])->name('products');
+Route::get('/{category}/{product}', [\App\Http\Controllers\Product\ProductController::class, 'index'])->name('products');
 
+Route::get('/bascket', [\App\Http\Controllers\Bascket\BasketController::class, 'index'])->name('bascket');
+
+Route::get('/bascket/order', [\App\Http\Controllers\Order\OrderController::class, 'index'])->name('order');
