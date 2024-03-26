@@ -15,6 +15,7 @@ class BasketController extends Controller
         if(!is_null($orderId)) {
             $order = Order::findOrFail($orderId);
         }
+
         return view('bascket', compact('order'));
     }
 
@@ -22,13 +23,43 @@ class BasketController extends Controller
     {
         $orderId = session('orderId');
         if(is_null($orderId)) {
-            $order = Order::create()->id;
-            session(['orderId' => $order->id]);
+            $order = Order::create();
+            $orderId = $order->id;
+            session(['orderId' => $orderId]);
         } else {
             $order = Order::find($orderId);
         }
-        $order->products()->attach($product);
 
-        return view('bascket', compact('order'));
+        if($order->products->contains($product)) {
+            $pivotRow  = $order->products()->where('product_id', $product)->first()->pivot;
+            $pivotRow ->count++;
+            $pivotRow ->update();
+        } else {
+            $order->products()->attach($product);
+        }
+
+        return redirect()->route('bascket');
+
+    }
+
+    public function remove($product)
+    {
+        $orderId = session('orderId');
+        if (is_null($orderId)) {
+            return redirect()->route('basket');
+        }
+        $order = Order::find($orderId);
+
+        if ($order->products->contains($product)) {
+            $pivotRow = $order->products()->where('product_id', $product)->first()->pivot;
+            if ($pivotRow->count < 2) {
+                $order->products()->detach($product);
+            } else {
+                $pivotRow->count--;
+                $pivotRow->update();
+            }
+        }
+
+        return redirect()->route('bascket');
     }
 }
