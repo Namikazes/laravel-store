@@ -19,6 +19,7 @@ Route::get('/', [\App\Http\Controllers\MainController::class, 'index'])->name('i
 Route::get('/bascket', [\App\Http\Controllers\Bascket\BasketController::class, 'index'])->name('bascket');
 Route::get('/bascket/order', [\App\Http\Controllers\Order\OrderController::class, 'index'])->name('order');
 Route::post('/bascket/add/{id}', [\App\Http\Controllers\Bascket\BasketController::class, 'add'])->name('bascket-add');
+Route::post('/bascket/order/confirm', [\App\Http\Controllers\Order\OrderController::class, 'confirm'])->name('order-confirm');
 Route::post('/bascket/remove/{id}', [\App\Http\Controllers\Bascket\BasketController::class, 'remove'])->name('bascket-remove');
 
 Route::get('/categories', [\App\Http\Controllers\Categories\CategoriesController::class, 'index'])->name('categories');
