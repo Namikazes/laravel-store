@@ -26,7 +26,7 @@
                             </a>
                         </td>
                         <td><span class="badge">{{ $product->pivot->count }}</span>
-                            <div class="btn-group">
+                            <div class="btn-group form-inline">
                                 <form action="{{route('bascket-remove', $product)}}" method="POST">
                                     <button type="submit" class="btn btn-danger"><span
                                             class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
@@ -50,7 +50,7 @@
             </table>
             <br>
             <div class="btn-group pull-right" role="group">
-                <a type="button" class="btn btn-success" href="http://laravel-diplom-1.rdavydov.ru/basket/place">Оформить заказ</a>
+                <a type="button" class="btn btn-success" href="{{ route('order') }}">Оформить заказ</a>
             </div>
         </div>
     </div>
